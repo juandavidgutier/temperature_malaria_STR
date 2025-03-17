@@ -19,11 +19,11 @@ Juan David Gutiérrez
 
 ## Versions
 
-causal-curve Python package 1.0.6
-DAGitty  R package 0.3-4
-ggdag  R package 0.2.12
-DAGitty  R package 0.3-4
-haldensify R package 0.2.3
-sl3 R package 1.4.3
-tmle3  R package 0.2.1
-tmle3shift  R package 0.2.1
+causal-curve Python package 1.0.6,
+ DAGitty  R package 0.3-4,
+ ggdag  R package 0.2.12,
+ DAGitty  R package 0.3-4,
+ haldensify R package 0.2.3,
+ sl3 R package 1.4.3,
+ tmle3  R package 0.2.1,
+ tmle3shift  R package 0.2.1
