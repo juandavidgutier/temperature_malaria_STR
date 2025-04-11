@@ -181,7 +181,7 @@ ggplot(main_results, aes(y = labs, x = ATE)) +
     axis.title = element_blank(),
     axis.text.y = element_text(hjust = 0, size = 12), 
     axis.text.x = element_text(hjust = 0, size = 12),
-    plot.margin = margin(r = 10, l = 5, t = 40, unit = "pt")  
+    plot.margin = margin(r = 3, l = 5, t = 40, unit = "pt")  
   )
 
 
