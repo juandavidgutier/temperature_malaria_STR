@@ -17,6 +17,10 @@ main_results <- data.frame(`labs` = c("Observed temperature", "Temperature + 0.5
 
 data_all <- read.csv("D:/data07-23.csv")
 str(data_all)
+
+# Temperature between 15-30°C
+dataset <- data_all[data_all$Temperature >= 15 & data_all$Temperature <= 30, ]
+
 dataset <- data_all[,7:28]
 
 # Confounders as binary 
@@ -25,6 +29,7 @@ for (i in 3:13) {
   dataset[[i]] <- ifelse(dataset[[i]] > mediana, 1, 0)
 }
 str(dataset)
+
 dataset <- dataset %>% drop_na()
 
 # learners used for conditional mean of the outcome
@@ -158,14 +163,14 @@ main_results$labs <- factor(main_results$labs, levels = desired_order)
 
 # Create the  plot
 ggplot(main_results, aes(y = labs, x = ATE)) +
-  geom_point(color = "red", size = 3, shape = 15) +
+  geom_point(color = "red", size = 2.5, shape = 15) +
   geom_errorbarh(aes(xmin = Lower, xmax = Upper), height = 0.0, lineend = "butt") +
-  geom_text(aes(x = 0.45, label = sprintf("%.3f", ATE)), hjust = 0) +
-  geom_text(aes(x = 0.5, label = sprintf("(%.3f, %.3f)", Lower, Upper)), hjust = 0) +
+  geom_text(aes(x = 0.95, label = sprintf("%.3f", ATE)), hjust = 0) +
+  geom_text(aes(x = 1.05, label = sprintf("(%.3f, %.3f)", Lower, Upper)), hjust = 0) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "red") +
-  coord_cartesian(xlim = c(0.25, 0.5)) +
+  coord_cartesian(xlim = c(0.6, 1.1)) +
   scale_x_continuous(expand = c(0.5, 0.05)) +
-  annotate("text", x = 0.53, y = max(as.numeric(main_results$labs)) + 0.5, 
+  annotate("text", x = 1.08, y = max(as.numeric(main_results$labs)) + 0.5, 
            label = "ATE (95% CI)", hjust = 0.5, fontface = "bold") +
   
   # Clean up the theme
@@ -178,4 +183,5 @@ ggplot(main_results, aes(y = labs, x = ATE)) +
     axis.text.x = element_text(hjust = 0, size = 12),
     plot.margin = margin(r = 10, l = 5, t = 40, unit = "pt")  
   )
+
 
