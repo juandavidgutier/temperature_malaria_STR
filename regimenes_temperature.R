@@ -154,14 +154,13 @@ main_results[5,3] <- tmle_fit2$summary$lower
 main_results[5,4] <- tmle_fit2$summary$upper
 
 
-#Figure 2
 # Define the desired order for the labs field
 desired_order <- c("Temperature + 2.0 °C", "Temperature + 1.5 °C", "Temperature + 1.0 °C", "Temperature + 0.5 °C", "Observed temperature")
 
 # Convert labs to a factor with the specified levels to control ordering
 main_results$labs <- factor(main_results$labs, levels = desired_order)
 
-# Create the  plot
+# Fig. 3
 ggplot(main_results, aes(y = labs, x = ATE)) +
   geom_point(color = "red", size = 2.5, shape = 15) +
   geom_errorbarh(aes(xmin = Lower, xmax = Upper), height = 0.0, lineend = "butt") +
