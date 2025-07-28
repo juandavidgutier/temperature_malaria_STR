@@ -8,7 +8,7 @@ library(tidyr)
 library(ggplot2)
 
 # --- Data Loading ---
-data_all <- read.csv("D:/clases/UDES/articulo malaria total/causal_inference/ml/ojo articulo regimen stocastico/ml/data07-23.csv")
+data_all <- read.csv("D:/data07-23.csv")
 
 # Apply temperature filter
 dataset_raw <- data_all[data_all$Temperature >= 15 & data_all$Temperature <= 30, ]
