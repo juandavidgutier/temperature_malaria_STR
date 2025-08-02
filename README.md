@@ -8,6 +8,7 @@ Dataset and code shared to reproduce the paper's results "Stochastic Treatment R
 The appropriate adjustment can be obtained with the file DAG_analysis.R.
 The causal exposure-response curve of the effect of temperature on the incidence of malaria can be obtained with the file exposure_response_curve.py.
 The regimenes analysis can be obtained with the file regimenes_temperature.R.
+Note that the data on malaria cases were provided by the SIVIGILA and corresponded to anonymized data; for this reason, the data shared in the repository do not contain potentially identifying participant information.
 
 ## Dependencies
 
