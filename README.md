@@ -14,6 +14,16 @@ Note that the data on malaria cases were provided by the SIVIGILA and correspond
 
 None
 
+## Data Privacy and Anonymization
+
+This dataset has been processed to ensure complete anonymization and contains no personally identifiable information (PII). All data has been:
+
+- Aggregated at appropriate spatial/temporal scales
+- Stripped of any individual identifiers
+- Processed to remove direct or indirect identifying elements
+
+The dataset is suitable for public sharing and complies with data privacy standards.
+
 
 ## Author
 
